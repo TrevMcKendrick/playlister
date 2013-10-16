@@ -13,29 +13,43 @@ class LibraryParser
       genre_name = item.split(" - ")[1].split(" [")[1].gsub("].mp3","")
 
 
-      temp = Song.new.tap{ |s| s.name = song_name }
-      Artist.new.tap do |a| 
-        a.name = artist_name
-        a.add_song(temp)
+      temp_song = Song.new.tap{ |s| s.name = song_name }
+
+      artist_names = Artist.all.collect do |artist|
+        artist.name if artist
       end
-      Genre.new.tap{ |g| g.name = genre_name }
 
-      # temp_song = Song.new.tap{ |s| s.name = song_name }
+      if artist_names.include?(artist_name)
+        Artist.all.each do |artist|
+          artist.add_song(temp_song) if artist.name == artist_name
+        end
+      else 
+        Artist.new.tap do |artist|
+          artist.name = artist_name
+          artist.add_song(temp_song)
+        end
+      end
 
-      # artist_names = Artist.all.collect do |artist|
-      #   artist.name if artist
-      # end
+      genre_names = Genre.all.collect do |genre|
+        genre.name if genre
+      end
 
-      # if artist_names.include?(artist_name)
-      #   Artist.all.each do |artist|
-      #     artist.add_song(temp_song) if artist.name == artist_name
-      #   end
-      # else 
-      #   Artist.new.tap do |artist|
-      #     artist.name = artist_name
-      #     artist.add_song(temp_song)
-      #   end
-      # end
+      if genre_names.include?(genre_name)
+        Genre.all.each do |genre|
+          if genre.name == genre_name
+            temp_song.genre = genre
+            genre.songs << temp_song
+            # genre.songs << temp_song.artist
+          end
+        end
+      else
+        Genre.new.tap do |genre|
+          temp_song.genre = genre
+          genre.name = genre_name
+          genre.songs << temp_song
+          # genre.songs << temp_song.artist
+        end
+      end
     end
   end
 end
