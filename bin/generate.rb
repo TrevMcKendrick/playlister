@@ -4,4 +4,5 @@ test = LibraryParser.new('../data')
 
 test.parse
 
-binding.pry
+sitegenerator = SiteGenerator.new
+sitegenerator.genre_pages
