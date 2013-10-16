@@ -29,6 +29,14 @@ describe "Genre" do
       artist.add_song(song)
     end
 
+    it "only knows about its own artists" do
+      genre = Genre.new.tap { |g| g.name = "rap" }
+      no_genre_artist = Artist.new
+      genre_artist = Artist.new
+      genre_artist.add_song(Song.new.tap { |s| s.genre = genre })
+      genre.artists.count.should eq(1)
+    end
+    
     genre.artists.count.should eq(2)
   end
 
