@@ -5,4 +5,4 @@ test = LibraryParser.new('../data')
 test.parse
 
 sitegenerator = SiteGenerator.new
-sitegenerator.genre_pages
+sitegenerator.generate_all
