@@ -6,17 +6,18 @@ class Genre
 
   def initialize
     @@genres << self
+    @songs = []
   end 
 
   def self.all
     @@genres
   end
 
-  def songs
-    songs = Song.all.select do |song|
-      song if song.genre.name == self.name
-    end
-  end
+  # def songs
+  #   songs = Song.all.select do |song|
+  #     song if song.genre.name == self.name
+  #   end
+  # end
 
   def artists
     artists = songs.collect do |song|
