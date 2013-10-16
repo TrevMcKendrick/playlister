@@ -4,7 +4,6 @@ class Genre
   attr_accessor :name, :songs, :artists
   @@genres = []
 
-
   def initialize
     @@genres << self
   end 

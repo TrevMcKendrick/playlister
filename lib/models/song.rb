@@ -10,6 +10,10 @@ class Song
     @@songs
   end
 
+  def self.count
+    @@songs.count
+  end
+
   def self.reset_songs
     @@songs = []
   end

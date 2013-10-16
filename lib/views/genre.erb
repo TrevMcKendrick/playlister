@@ -1,23 +1,12 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
-  <meta charset="UTF-8" />
-  <meta name="viewport" content ="width=device-width, minimum-scale=1.0, initial-scale=1.0">
-  <link rel="shortcut icon" href="favicon.ico" />
-  <title>Genre</title>
-  <link rel='stylesheet' href="css/style.css" type='text/css' media='all' />
-  <link rel='stylesheet' href="css/media-queries.css" type='text/css' media='all' />
-  <link rel='stylesheet' href="css/flexslider.css" type='text/css' media='screen' />
-  <link rel='stylesheet' href="css/font-awesome.css" type='text/css' media='screen' />
-</head> -->
+<head></head>
+<body>
 
 <% Genre.all.each do |genre| %>
   <li><a href ="<%= genre.name %>"> <%= genre.songs %></a></li>
+</li>
 <% end %>
-
-
-<body>
   <p>"THIS IS A TEST"</p>
   <a href=<%= genre.name %>></a>
 </body>
