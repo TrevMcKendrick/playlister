@@ -1,4 +1,12 @@
+require_relative './spec_helper.rb'
+
 describe "Genre" do
+
+  before :each do
+    Genre.reset_genres
+    Artist.reset_artists
+    Song.reset_songs
+  end
 
   it "can initialize a genre" do
     Genre.new.should be_an_instance_of(Genre)
@@ -16,6 +24,7 @@ describe "Genre" do
       song = Song.new
       song.genre = genre
     end
+
     genre.songs.count.should eq(3)
   end
 
@@ -28,16 +37,21 @@ describe "Genre" do
       song = Song.new.tap { |s| s.genre = genre }
       artist.add_song(song)
     end
-
-    it "only knows about its own artists" do
-      genre = Genre.new.tap { |g| g.name = "rap" }
-      no_genre_artist = Artist.new
-      genre_artist = Artist.new
-      genre_artist.add_song(Song.new.tap { |s| s.genre = genre })
-      genre.artists.count.should eq(1)
-    end
-    
     genre.artists.count.should eq(2)
+    genre.artists.each { |artist| artist.class.should == Artist }
+  end
+
+  it "only knows about its own artists" do
+    genre = Genre.new.tap { |g| g.name = "reggae" }
+    rap_genre = Genre.new.tap { |g| g.name = "rap" }
+
+    rap_artist = Artist.new
+    rap_artist.add_song(Song.new.tap { |s| s.genre = rap_genre })
+
+    genre_artist = Artist.new
+    genre_artist.add_song(Song.new.tap { |s| s.genre = genre })
+    
+    genre.artists.count.should eq(1)
   end
 
   it "keeps unique artists" do
@@ -63,7 +77,7 @@ describe "Genre" do
     end
 
     it "can reset genres" do
-      genres = [1..5].collect do |i|
+      genres = (1..5).collect do |i|
         Genre.new
       end
       Genre.count.should eq(5)

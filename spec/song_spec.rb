@@ -13,7 +13,7 @@ describe "Song" do
 
   it "can have a genre" do
     song = Song.new
-    song.should_respond_to(:genre)
+    song.should respond_to(:genre)
   end
 
   it "has an artist" do
