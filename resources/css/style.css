@@ -1,8 +1,17 @@
+
+/****** Local ********/
+
+/*.jumbotron{
+	margin-top: 20px 5px 5px 5px; 
+	padding: 20px 5px 5px 5px;
+}*/
+
 /* web fonts */
 @import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps);
 @import url(http://fonts.googleapis.com/css?family=Clicker+Script);
 
 /********** Fixes **********/
+
 
 * {
 	margin: 0;
