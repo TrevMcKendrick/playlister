@@ -2,12 +2,13 @@
 <html lang="en-US">
 <head></head>
 <body>
+<p><strong>Genre Index</strong></p>
 
 <% Genre.sorted_on_song_count.each do |genre| %>
   <p><a href="genres/<%=genre.name%>.html">
   <%=genre.name.capitalize%></a> <%=genre.songs.count%> songs, <%=genre.artists.count%> artists
    </p>
 <% end %>
-
+<p><a href="../_site/index.html">Home</a> > Genre Index</p>
 </body>
 </html
