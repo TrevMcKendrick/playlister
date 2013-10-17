@@ -1,0 +1,319 @@
+/* web fonts */
+@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps);
+@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
+
+/********** Fixes **********/
+
+* {
+	margin: 0;
+	padding:0;
+	border:0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+	line-height: 0;
+}
+
+/********** Global **********/
+
+body {
+	background: ;
+}
+
+h2, h3 {
+	margin-bottom: 5px; 
+}
+
+ul, ol {
+	margin-bottom: 10px;
+}
+
+li {
+	margin-left: 20px;
+}
+
+p, address {
+	margin: 0 0 25px;
+	font-size: 14px;
+}
+
+figure {
+	margin: 0 0 10px;
+}
+
+figcaption {
+	font: 12px 'Elsie Swash Caps', cursive;
+	color: #777];
+	text-align: right;
+}
+
+table {
+	width: 100%;
+	margin: 0 0 20px;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+}
+
+tr:nth-child(even) {
+	background: #efefef;
+}
+
+th, td {
+	padding: 10px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+th {
+	background: #555;
+	color: white;
+}
+
+input, textarea {
+	display: block;
+	width: 100%;
+	padding: 5px;
+	margin-bottom: 5px;
+	box-shadow: 0 3px 5px #ccc;
+	border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+	margin-top: 5px;
+	width: 100px;
+	background: black;
+	color: white;
+	border-radius: 25px;
+	border: 0;
+}
+
+input[type="submit"]:hover {
+	background: #555;
+}
+
+iframe {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	height: 353px;
+}
+
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.shadow {
+	box-shadow: 0 3px 10px #333;
+}
+
+.milk_text {
+	font: bold 42px 'Elsie Swash Caps', cursive;
+	color: white;
+	text-shadow: 0 2px 3px #000;
+	margin: 0 0 10px;
+}
+
+.border_right {
+	border-right: 1px dotted #ccc;
+	padding-right: 20px;
+}
+
+/********** Logo **********/
+
+#logo {
+	padding: 85px 0 25px;
+	/* gradient */
+	background: #eeeeee; /* Old browsers */
+	background: -moz-linear-gradient(top,  #eeeeee 0%, #e2e2e2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#e2e2e2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #eeeeee 0%,#e2e2e2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #eeeeee 0%,#e2e2e2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #eeeeee 0%,#e2e2e2 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #eeeeee 0%,#e2e2e2 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#e2e2e2',GradientType=0 ); /* IE6-9 */
+}
+
+	#logo h1 {
+		margin: 0;
+		padding-top: 20px;
+		display: inline-block;
+		font-family: 'Clicker Script', cursive;
+		background: url(../images/logo_crown_emboss.png) no-repeat top center;
+	}
+
+	#logo h2 {
+		margin: 0;
+		display: inline-block;
+		font-family: 'Elsie Swash Caps', cursive;
+	}
+
+/********** Content Area **********/
+
+#bg {
+	background-image: url(../images/yellow-stripe-background.jpg);
+	background-position: center top, left top;
+	background-repeat: no-repeat, repeat-y;
+	padding: 30px 0;
+}
+
+	/********** Sections **********/
+
+	section {
+		padding: 20px;
+		background: white;
+	}
+
+	section a {
+		color: #555;
+		text-decoration: underline;
+	}
+
+	/* Posititoning Classes */
+
+	.col1_left {
+		float: left;
+		width: 32.6%;
+		margin: 0 0 20px;
+	}
+
+	.col1_mid {
+		float: left;
+		width: 32.6%;
+		margin: 0 1% 20px 1%;
+	}
+
+	.col1_right {
+		float: right;
+		width: 32.6%;
+		margin: 0 0 20px;
+	}
+
+	.col2_left {
+		float:left;
+		width: 66.4%;
+		margin: 0 1% 20px 0;
+	}
+
+	.col2_right {
+		float: right;
+		width: 66.4%;
+		margin: 0 0 20px 1%;
+	}
+
+	.col3 {
+		margin: 0 0 20px;
+		clear: both;
+	}
+
+/*   Links and type   */
+
+/* Type Selector */
+
+p { /* selects all <p> */
+	font-size: 16px; /* px, pt, 100%, 1em */
+	line-height: 1.5em;
+}
+
+figcaption { /* selects all <figcaption> */
+	/*
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 1.5em;
+	font-family: Georgia, "Times New Roman", serif;
+	*/
+	font: normal 12px/1.5em 'Elsie Swash Caps', cursive;
+	color: #777; /* 16 color names, hexadecimal, rgba */
+	text-align: right;
+}
+
+/*   Secondary layout structures   */
+
+/* ID Selector (apply to only one unique element per page) */
+
+#logo { /* selects the element with an id="logo" */
+	background: 003366;
+	text-align: center;
+}
+
+/* Descendent Selector */
+
+#logo h1 { /* selects only <h1> inside the element with id="logo" */
+	font-family: 'Clicker Script', cursive;
+}
+
+#logo h2 { /* selects only <h2> inside the element with id="logo" */
+	font-family: 'Elsie Swash Caps', cursive;
+}
+
+section a {
+	color: #555;
+	text-decoration: underline;
+}
+
+#header
+
+#nav-menu
+
+/* Pseudo Selector */
+
+#details a:link, #details a:visited { /* selects links during their default state (un-touched) */
+	color: black;
+	text-decoration: none;
+}
+
+#details a:hover { /* select links during mouse hover (on mouse over) */
+	color: black;
+	text-decoration: underline;
+}
+
+#details a:active { /* select links while the mouse button is depressed (clicking) */
+	color: red;
+}
+
+/********** Details **********/
+
+	#details {
+		clear: both;
+		padding: 20px 10px;
+		/* gradient */
+		background: #e5e5e5; /* Old browsers */
+		background: -moz-linear-gradient(top,  #e5e5e5 0%, #c4c4c4 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e5e5), color-stop(100%,#c4c4c4)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #e5e5e5 0%,#c4c4c4 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #e5e5e5 0%,#c4c4c4 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #e5e5e5 0%,#c4c4c4 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #e5e5e5 0%,#c4c4c4 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#c4c4c4',GradientType=0 ); /* IE6-9 */
+	}
+
+	#details a:link, #details a:visited {
+		color: black;
+		text-decoration: none;
+	}
+
+	#details a:hover, #details a:active {
+		text-decoration: underline;
+	}
+
+/********** Footer **********/
+
+footer {
+	text-align: center;
+	font-size: 10px;
+	color: #555;
+}
+
+	footer a {
+		color: #555;
+		text-decoration: underline;
+	}
