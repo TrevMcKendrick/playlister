@@ -3,6 +3,7 @@
   <head></head>
     <body>
     <h3><%= song.name.capitalize %> - <a href= "../artists/<%=song.artist.name.downcase.gsub(/\s+/, "") %>.html"><%= song.artist.name.capitalize %></a></h3>
+    
     <h4>Genre - <a href= "../genres/<%=song.genre.name.downcase.gsub(/\s+/, "") %>.html"><%= song.genre.name.capitalize %></a></h4>
   </body>
 </html>
