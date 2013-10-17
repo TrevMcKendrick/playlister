@@ -13,47 +13,39 @@ class LibraryParser
 
   def add_song_when_artist
     Artist.all.each do |artist|
-      artist.add_song(@temp_song) if artist.name == @artist_name
+      artist.add_song(temp_song) if artist.name == artist_name
     end
   end
 
   def make_artist_with_song
     Artist.new.tap do |artist|
-      artist.name = @artist_name
-      artist.add_song(@temp_song)
+      artist.name = artist_name
+      artist.add_song(temp_song)
     end
   end
 
   def add_song_when_genre
     Genre.all.each do |genre|
-      if genre.name == @genre_name
-        @temp_song.genre = genre
-        genre.songs << @temp_song
+      if genre.name == genre_name
+        temp_song.genre = genre
+        genre.songs << temp_song
       end
     end
   end
 
   def make_genre_with_song
     Genre.new.tap do |genre|
-      @temp_song.genre = genre
-      genre.name = @genre_name
-      genre.songs << @temp_song
+      temp_song.genre = genre
+      genre.name = genre_name
+      genre.songs << temp_song
     end
   end
 
-  def song_to_genre
-    if collect_names(Genre).include?(@genre_name)
-      add_song_when_genre
+  def song_to(object, name)
+    if collect_names(object).include?(name)
+      self.send("add_song_when_#{object.to_s.downcase}".to_sym)
     else
-      make_genre_with_song
-    end
-  end
-
-  def song_to_artist
-    if collect_names(Artist).include?(@artist_name)
-      add_song_when_artist
-    else 
-      make_artist_with_song
+      self.send("make_#{object.to_s.downcase}_with_song".to_sym)
     end
   end
 
@@ -63,11 +55,11 @@ class LibraryParser
       @artist_name = item.split(" - ").shift
       @song_name = item.split(" - ")[1].split(" [")[0]
       @genre_name = item.split(" - ")[1].split(" [")[1].gsub("].mp3","")
-      
-      @temp_song = Song.new.tap{ |s| s.name = @song_name }
 
-      song_to_artist
-      song_to_genre
+      @temp_song = Song.new.tap{ |s| s.name = song_name }
+
+      song_to(Artist, artist_name)
+      song_to(Genre, genre_name)
     end
   end
 end
