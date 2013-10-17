@@ -32,6 +32,15 @@ class SiteGenerator
     end
   end
   
+  def song_index
+    song_index = ERB.new(File.open('../lib/views/song.erb').read)
+    Song.all.each do |song|
+      File.open("../_site/song.html", 'w+') do |f|
+        f << song_index.result(binding)
+      end
+    end
+  end
+
   def artist_pages
     show = ERB.new(File.open('../lib/views/artist_pages.erb').read)
     Artist.all.each do |artist|
@@ -50,11 +59,11 @@ class SiteGenerator
     end
   end
 
-  def artist_pages
-    artist_page = ERB.new(File.open('../lib/views/song_pages.erb').read)
+  def song_pages
+    song_page = ERB.new(File.open('../lib/views/song_pages.erb').read)
     Song.all.each do |song|
       File.open("../_site/songs/#{song.name.downcase.gsub(/\s+/, "")}.html", 'w+') do |f|
-        f << artist_page.result(binding)
+        f << song_page.result(binding)
       end
     end
   end

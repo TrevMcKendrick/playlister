@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head></head>
+<body>
+<h1>Songs</h1>
+
+<p>There are <%=Song.all.count%> in this playlist.</p>
+
+<p><strong>All Songs:</strong></p>
+
+<% Song.all.each do |song| %>
+<li><a href = "songs/<%=song.name.downcase.gsub(/\s+/, "")%>.html">
+  <%=song.name%></a></li>
+<% end %>
+
+<br>
+<a href = "../index.html">Home</a>
+
+</body>
+</html>

@@ -6,7 +6,7 @@
  <h2><%=artist.name%> - <%=artist.songs.count %> Song(s)</h2>
 <% i = 1%>
 <%artist.songs.each do |song| %>
-    <p><%=i%>. <a href = "songs/<%=song.name.downcase.gsub(/\s+/, "")%>.html"><%=song.name %> - <a href = "genres/<%=song.genre%>.html"><%=song.genre.name.capitalize%></a></p>
+    <p><%=i%>. <a href = "../songs/<%=song.name.downcase.gsub(/\s+/, "")%>.html"><%=song.name %></a> - <a href = "../genres/<%=song.genre.name.downcase%>.html"><%=song.genre.name.capitalize%></a></p>
     <% i += 1 %>
 <% end %>
 <br>
