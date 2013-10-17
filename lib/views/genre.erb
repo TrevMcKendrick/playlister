@@ -3,10 +3,10 @@
 <head></head>
 <body>
 
-<% Genre.all.each do |genre| %>
+<% Genre.sorted_on_song_count.each do |genre| %>
   <p><a href="genres/<%=genre.name%>.html">
-    <%=genre.name.capitalize%></a> <%=genre.songs.count%> songs, <%=genre.artists.count%> artists
-  </p>
+  <%=genre.name.capitalize%></a> <%=genre.songs.count%> songs, <%=genre.artists.count%> artists
+   </p>
 <% end %>
 
 </body>
