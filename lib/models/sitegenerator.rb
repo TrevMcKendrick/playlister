@@ -4,6 +4,7 @@ class SiteGenerator
     @songs = Song.all
     @genre = Genre.all
     @artist = Artist.all
+    create_folders
   end
 
   def index_page
@@ -47,5 +48,12 @@ class SiteGenerator
         f << show.result(binding)
       end
     end
-  end  
+  end
+
+  def create_folders
+    system 'mkdir "../_site/"'
+    system 'mkdir "../_site/genres/"'
+    system 'mkdir "../_site/artists/"'
+  end
+  
 end
