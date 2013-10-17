@@ -37,5 +37,9 @@ class Genre
     @@genres.count
   end
 
-
+  def self.sorted_on_song_count
+    @@genres.sort_by do |genre|
+      genre.songs.count
+    end.reverse
+  end
 end 
