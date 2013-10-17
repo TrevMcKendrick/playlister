@@ -39,8 +39,8 @@ class SiteGenerator
 
   def genre_pages
     show = ERB.new(File.open('../lib/views/genre_pages.erb').read)
-    Artist.all.each do |artist|
-      File.open("../_site/genres/#{artist.name.downcase.gsub(/\s+/, "")}.html", 'w+') do |f|
+    Genre.all.each do |genre|
+      File.open("../_site/genres/#{genre.name.downcase.gsub(/\s+/, "")}.html", 'w+') do |f|
         f << show.result(binding)
       end
     end

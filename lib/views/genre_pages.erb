@@ -2,7 +2,19 @@
 <html lang="en-US">
 <head></head>
 <body>
-<a href ="<%= genre.name %>"> <%= genre.songs %></a></li>
- <p>"THIS IS A TEST"</p>
+
+ <p><strong><%=genre.name.capitalize%></strong></p>
+
+ <%genre.artists.each do |artist| %>
+    <p><a href="../artists/<%=artist.name.delete(' ')%>.html"><%=artist.name %></a></p>
+ <% end %>
+  
+ <p><em><%=genre.artists.count %> artists in this genre.</em></p> 
 </body>
 </html>
+
+
+
+
+
+

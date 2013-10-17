@@ -4,10 +4,10 @@
 <body>
 
 <% Genre.all.each do |genre| %>
-  <li><a href ="<%= genre.name %>"> <%= genre.songs %></a></li>
-</li>
+  <p><a href="genres/<%=genre.name%>.html">
+    <%=genre.name.capitalize%></a> <%=genre.songs.count%> songs, <%=genre.artists.count%> artists
+  </p>
 <% end %>
-  <p>"THIS IS A TEST"</p>
-  <a href=<%= genre.name %>></a>
+
 </body>
-</html>
+</html
