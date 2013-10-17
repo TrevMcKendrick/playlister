@@ -6,7 +6,7 @@
  <p><strong><%=genre.name.capitalize%></strong></p>
 
  <%genre.songs.each do |song| %>
-    <p><a href="../songs/<%=song.name.delete(' ')%>.html"><%=song.name %></a> - <a href="../artists/<%=song.artist.name%>.html"><%=song.artist.name%></a></p>
+    <p><a href="../songs/<%=song.name.downcase.delete(' ')%>.html"><%=song.name %></a> - <a href="../artists/<%=song.artist.name.downcase.delete(' ')%>.html"><%=song.artist.name%></a></p>
  <% end %>
   
  <p><em><%=genre.artists.count %> artists in this genre.</em></p> 
