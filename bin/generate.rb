@@ -4,6 +4,7 @@ test = LibraryParser.new('../data')
 test.parse
 
 sitegenerator = SiteGenerator.new
+sitegenerator.index_page
 sitegenerator.artist_index
 sitegenerator.artist_pages
 sitegenerator.genre_index
