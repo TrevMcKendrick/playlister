@@ -2,6 +2,13 @@
 <html lang="en-US">
 <head></head>
 <body>
-<%=artist.name%>, [ <%=artist.songs.count%> Songs ]</a></li>
+<h1>Artist</h1>
+ <h2><%=artist.name%> - <%=artist.songs.count %> Song(s)</h2>
+<% i = 1%>
+<%artist.songs.each do |song| %>
+    <p><%=i%>. <%=song.name %> - <%=song.genre.name.capitalize%></p>
+    <% i += 1 %>
+<% end %>
+   
 </body>
 </html>

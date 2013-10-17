@@ -2,8 +2,16 @@
 <html lang="en-US">
 <head></head>
 <body>
+<h1>Artists</h1>
+
+<p>There are <%=Artist.all.count%> in this playlist.</p>
+
+<p><strong>All Artists:</strong></p>
+
 <% Artist.all.each do |artist| %>
-<li><a href = "artists/<%artist.name.downcase.gsub(/\s+/, "")%>"><%=artist.name%>, [ <%=artist.songs.count%> Songs ]</a></li>
+<li><a href = "artists/<%=artist.name.downcase.gsub(/\s+/, "")%>.html">
+	<%=artist.name%></a>, [ <%=artist.songs.count%> Songs ]</li>
 <% end %>
+
 </body>
 </html>
