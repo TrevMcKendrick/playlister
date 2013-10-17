@@ -7,7 +7,10 @@ class SiteGenerator
   end
 
   def index_page
-   
+    index = ERB.new(File.open('../lib/views/index.erb').read)
+      File.open("../_site/index.html", 'w+') do |f|
+      f << index.result(binding)
+    end
   end
   
   def artist_index
@@ -44,6 +47,5 @@ class SiteGenerator
         f << show.result(binding)
       end
     end
-  end
-  
+  end  
 end
