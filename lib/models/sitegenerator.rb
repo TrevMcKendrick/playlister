@@ -50,10 +50,20 @@ class SiteGenerator
     end
   end
 
+  def artist_pages
+    artist_page = ERB.new(File.open('../lib/views/song_pages.erb').read)
+    Song.all.each do |song|
+      File.open("../_site/songs/#{song.name.downcase.gsub(/\s+/, "")}.html", 'w+') do |f|
+        f << artist_page.result(binding)
+      end
+    end
+  end
+
   def create_folders
     system 'mkdir "../_site/"'
     system 'mkdir "../_site/genres/"'
     system 'mkdir "../_site/artists/"'
+    system 'mkdir "../_site/songs/"'
   end
   
 end
