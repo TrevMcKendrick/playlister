@@ -1,5 +1,4 @@
 <html><!doctype html>
-<html>
 	<head>
 		<meta name="keywords" content="music, mp3, player">
 		<meta name="description" content="Playlister program provides a web interface to play your selection of MP3s.">
@@ -7,54 +6,49 @@
 		<link rel="stylesheet" href="../resources/css/normalize.css">
 		<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
 	</head>
-	<body styles>
-    <div class="container">    
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="index.html" class="navbar-brand">Playlister - A Flatiron School Project</a>
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse" id="navbar-main">
-          <ul class="nav navbar-nav">
-            <li>
-              <a href="artist.html">Artists</a>
-            </li>
-            <li>
-              <a href="genre.html">Genres</a>
-             <li>
-              <a href="song.html">Songs</a>
-            </li>
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://www.youtube.com/" target="_blank">Search YouTube</a></li>
-            <li><a href="http://flatironschool.com/" target="_blank">Flatiron School</a></li>
-          </ul>
-
-        </div>
-      </div>
-    </div>
-    <br>
-    <br>
-    <br>
-<h1>Songs</h1>
-
-<p>There are <%=Song.all.count%> in this playlist.</p>
-
-<p><strong>All Songs:</strong></p>
-
-<% Song.all.each do |song| %>
-<li><a href = "songs/<%=song.name.downcase.gsub(/\s+/, "")%>.html">
-  <%=song.name%></a></li>
-<% end %>
-
-<br>
-<a href = "../index.html">Home</a>
-
-</body>
+	<body>
+	    <div class="container">    
+		    <div class="navbar navbar-default navbar-fixed-top">
+		      <div class="container">
+		        <div class="navbar-header">
+		          <a href="index.html" class="navbar-brand">Playlister - A Flatiron School Project</a>
+		          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+		        </div>
+		        <div class="navbar-collapse collapse" id="navbar-main">
+		          <ul class="nav navbar-nav">
+		            <li>
+		              <a href="artist.html">Artists</a>
+		            </li>
+		            <li>
+		              <a href="genre.html">Genres</a>
+		            </li>
+		             <li>
+		              <a href="song.html">Songs</a>
+		            </li>
+		          </ul>
+		          <ul class="nav navbar-nav navbar-right">
+		            <li><a href="http://www.youtube.com/" target="_blank">Search YouTube</a></li>
+		            <li><a href="http://flatironschool.com/" target="_blank">Flatiron School</a></li>
+		          </ul>
+		        </div>
+		      </div>
+		    </div>
+		    <br>
+		    <br>
+		    <br>
+				<h1>Songs</h1>
+				<p>There are <%=Song.all.count%> songs in this playlist.</p>
+				<p><strong>All Songs:</strong></p>
+				<% Song.all.each do |song| %>
+				<li><a href = "songs/<%=song.name.downcase.gsub(/\s+/, "")%>.html">
+				  <%=song.name%></a></li>
+				<% end %>
+				<br>
+			<a href = "../index.html">Home</a>
+		</div>
+	</body>
 </html>

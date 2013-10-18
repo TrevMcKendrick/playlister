@@ -1,5 +1,4 @@
 <html><!doctype html>
-<html>
 	<head>
 		<meta name="keywords" content="music, mp3, player">
 		<meta name="description" content="Playlister program provides a web interface to play your selection of MP3s.">
@@ -7,7 +6,7 @@
 		<link rel="stylesheet" href="../../resources/css/normalize.css">
 		<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
 	</head>
-	<body styles>
+	<body>
     <div class="container">
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -26,16 +25,15 @@
             </li>
             <li>
               <a href="../genre.html">Genres</a>
+             </li>
              <li>
               <a href="../song.html">Songs</a>
             </li>
           </ul>
-
           <ul class="nav navbar-nav navbar-right">
             <li><a href="http://www.youtube.com/" target="_blank">Search YouTube</a></li>
             <li><a href="http://flatironschool.com/" target="_blank">Flatiron School</a></li>
           </ul>
-
         </div>
       </div>
     </div>
@@ -43,15 +41,12 @@
     <br>
     <br>
     <h1>Genre</h1>
- <p><strong><%=genre.name.capitalize%></strong></p>
-
- <%genre.songs.each do |song| %>
-    <p><a href="../songs/<%=song.name.downcase.delete(' ')%>.html"><%=song.name %></a> - <a href="../artists/<%=song.artist.name.downcase.delete(' ')%>.html"><%=song.artist.name%></a></p>
- <% end %>
-  
- <p><em><%=genre.artists.count %> artists in this genre.</em></p> 
- 
- <p><a href="../../_site/index.html">Home</a> > <a href="../../_site/genre.html">Genre Index</a> > <%=genre.name.capitalize%> </p>
-
-</body>
+		 <p><strong><%=genre.name.capitalize%></strong></p>
+		 <%genre.songs.each do |song| %>
+		   <p><a href="../songs/<%=song.name.downcase.delete(' ')%>.html"><%=song.name %></a> - <a href="../artists/<%=song.artist.name.downcase.delete(' ')%>.html"><%=song.artist.name%></a></p>
+		 <% end %>
+		 <p><em><%=genre.artists.count %> artists in this genre.</em></p> 
+		 <p><a href="../../_site/index.html">Home</a> > <a href="../../_site/genre.html">Genre Index</a> > <%=genre.name.capitalize%> </p>
+ 		</div>
+	</body>
 </html>

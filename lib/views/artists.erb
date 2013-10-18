@@ -26,37 +26,30 @@
             </li>
             <li>
               <a href="genre.html">Genres</a>
+            </li>
              <li>
               <a href="song.html">Songs</a>
             </li>
           </ul>
-
           <ul class="nav navbar-nav navbar-right">
             <li><a href="http://www.youtube.com/" target="_blank">Search YouTube</a></li>
             <li><a href="http://flatironschool.com/" target="_blank">Flatiron School</a></li>
           </ul>
-
         </div>
       </div>
     </div>
     <br>
     <br>
     <br>
-
-
-	<h1>Artist Index</h1>
-
+		<h1>Artist Index</h1>
 		<p>There are <%=Artist.all.count%> in this playlist.</p>
-
 		<p><strong>All Artists:</strong></p>
-
 			<% Artist.all.each do |artist| %>
 			<li><a href = "artists/<%=artist.name.downcase.gsub(/\s+/, "")%>.html">
 				<%=artist.name%></a>, <%=artist.songs.count%> Songs</li>
 			<% end %>
-
 		<br>
 		<a href = "../_site/index.html">Home</a>  >  Artist Index
-
+		</div>
 	</body>
 </html>

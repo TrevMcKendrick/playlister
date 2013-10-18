@@ -1,5 +1,4 @@
 <html><!doctype html>
-<html>
 	<head>
 		<meta name="keywords" content="music, mp3, player">
 		<meta name="description" content="Playlister program provides a web interface to play your selection of MP3s.">
@@ -26,32 +25,30 @@
             </li>
             <li>
               <a href="../genre.html">Genres</a>
+            </li>
              <li>
               <a href="../song.html">Songs</a>
             </li>
           </ul>
-
           <ul class="nav navbar-nav navbar-right">
             <li><a href="http://www.youtube.com/" target="_blank">Search YouTube</a></li>
             <li><a href="http://flatironschool.com/" target="_blank">Flatiron School</a></li>
           </ul>
-
         </div>
       </div>
     </div>
-     <br>
     <br>
     <br>
-
-<h1>Artist</h1>
- <h2><%=artist.name%> - <%=artist.songs.count %> Song(s)</h2>
-<% i = 1%>
-<%artist.songs.each do |song| %>
-    <p><%=i%>. <a href = "../songs/<%=song.name.downcase.gsub(/\s+/, "")%>.html"><%=song.name %></a> - <a href = "../genres/<%=song.genre.name.downcase%>.html"><%=song.genre.name.capitalize%></a></p>
-    <% i += 1 %>
-<% end %>
-<br>
-<a href = "../_site/index.html">Home</a>  >  <a href = "../artist.html">Artist Index</a>  >  <%=artist.name%>
-
-</body>
+    <br>
+		<h1>Artist</h1>
+		 <h2><%=artist.name%> - <%=artist.songs.count %> Song(s)</h2>
+		<% i = 1%>
+		<%artist.songs.each do |song| %>
+		    <p><%=i%>. <a href = "../songs/<%=song.name.downcase.gsub(/\s+/, "")%>.html"><%=song.name %></a> - <a href = "../genres/<%=song.genre.name.downcase%>.html"><%=song.genre.name.capitalize%></a></p>
+		    <% i += 1 %>
+		<% end %>
+		<br>
+		<a href = "../_site/index.html">Home</a>  >  <a href = "../artist.html">Artist Index</a>  >  <%=artist.name%>
+		</div>
+	</body>
 </html>
